@@ -1,21 +1,18 @@
 import React, { Component } from 'react';
 import KanbanColumn from '../kanban_column/kanban_column';
-import KanbanCard from '../kanban_card/kanban_card';
+import './kanban_board.css';
 
 class KanbanBoard extends Component {
-  constructor() {
-    
-  }
-
-  componentDidMount() {
-
-  }
-
   render() {
     return (
       <div className="kanban-board">
-        <h3>Kanban Board</h3>
-
+        <div className="header-container">
+          <h3>Kanban Board</h3>
+        </div>
+        <KanbanColumn name="Backlog" />
+        <KanbanColumn name="To Do" />
+        <KanbanColumn name="In Progress" />
+        <KanbanColumn name="Finished" />
       </div>
     );
   }

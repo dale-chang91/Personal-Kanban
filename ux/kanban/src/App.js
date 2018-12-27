@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
 
-import KanbanForm from '../src/components/kanban/kanban_card/kanban_form';
+import KanbanForm from '../src/components/kanban/kanban_task_form/kanban_task_form';
+import KanbanBoard from '../src/components/kanban/kanban_board/kanban_board';
 
 class App extends Component {
   constructor(props) {
@@ -16,7 +17,8 @@ class App extends Component {
     return (
       <div className="App">
         <h1>{this.state.message}</h1>
-        <KanbanForm></KanbanForm>
+        //{<KanbanForm></KanbanForm>}
+        <KanbanBoard />
       </div>
     );
   }

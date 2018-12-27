@@ -1,22 +1,24 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 const KanbanForm = (props) => {
   return (
     <form onSubmit={props.formSubmitted}>
-      <label htmlFor="newTaskName">Task Name</label>
+      <label htmlFor="newTaskName">Task Name </label>
       <input
         onChange={props.newTaskNameChanged}
         id="newTaskName"
         name="newTaskName"
         value={props.newTaskName}
       />
-      <label htmlFor="newTaskDesc">Task Name</label>
+      <br />
+      <label htmlFor="newTaskDesc">Task Description </label>
       <input
         onChange={props.newTaskDescChanged}
         id="newTaskDesc"
         name="newTaskDesc"
         value={props.newTaskDesc}
       />
+      <br/>
       <button type="submit">Create Task</button>
     </form>
   )

@@ -1,30 +1,22 @@
-import React, { Component } from 'react';
+import React from 'react';
+
+import './kanban_card.css';
 
 const KanbanCard = (props) => {
   const {
-
+    id, title, description
   } = props;
 
   return (
     <div className="kanban-card">
-      <span></span>
+      <div className="kanban-card-header-container">
+        <span className="kanban-card-header-text">{props.title}</span>
+      </div>
+      <div className="kanban-card-description-container">
+        <span className="kanban-card-description-text">{props.description}</span>
+      </div>
     </div>
   );
 };
-
-class KanbanCard extends Component {
-  constructor(props) {
-
-  }
-
-  render() {
-    return (
-      <div className="card">
-        <p>{this.state.title}</p>
-        <p>{this.state.desc}</p>
-      </div>
-    );
-  }
-}
 
 export default KanbanCard;
