@@ -3,10 +3,11 @@ import React from 'react';
 import './kanban_card.css';
 
 const KanbanCard = (props) => {
+/*
   const {
     id, title, description
   } = props;
-
+*/
   return (
     <div className="kanban-card">
       <div className="kanban-card-header-container">

@@ -36,5 +36,23 @@ module.exports = {
 			"description": "Create a public GitHub repository so that anyone can pull and use this code",
 			"column": "Finished"
 		}
+	],
+	"columns": [
+		{
+			"id": 1,
+			"name": "Backlog"
+		},
+		{
+			"id": 2,
+			"name": "To Do"
+		},
+		{
+			"id": 3,
+			"name": "In Progress"
+		},
+		{
+			"id": 4,
+			"name": "Finished"
+		}
 	]
 }

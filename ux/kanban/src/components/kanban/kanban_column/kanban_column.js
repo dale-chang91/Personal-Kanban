@@ -7,8 +7,9 @@ import { Query } from 'react-apollo';
 import gql from 'graphql-tag';
 
 const TASK_QUERY = gql`
+query columnTasks($columnName: String!)
   {
-    tasks(column: "todo") {
+    allTasks(filter: { column: $columnName }) {
       id
       title
       description
@@ -17,23 +18,26 @@ const TASK_QUERY = gql`
 `;
 
 class KanbanColumn extends Component {
-  constructor(props) {
-    super(props);
-  }
-
-  componentDidMount() {
-
-  }
-
   render() {
     return (
       <div className="kanban-column">
-        <Query query={TASK_QUERY}>
+        <div className="column-header">
+          <h3>{this.props.columnName}</h3>
+        </div>
+        <Query
+          query={TASK_QUERY}
+          variables={{ columnName: this.props.columnName }}
+        >
           { ({ loading, error, data }) => {
-            if (loading) return <div>Fetching column data</div>
-            if (error) return <div id="error">Error fetching data</div>
+            if (loading) return <div>Fetching task data</div>
+            if (error) {
+              console.log('error: '+error);
+              console.log('data: '+JSON.stringify(data));
+              return <div id="error">Error fetching task data</div>
+            }
 
-            const tasksToRender = data.tasks;
+            console.log('data: '+JSON.stringify(data));
+            const tasksToRender = data.allTasks;
 
             return (
               tasksToRender.map(task =>

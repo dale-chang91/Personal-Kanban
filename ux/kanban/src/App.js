@@ -17,7 +17,7 @@ class App extends Component {
     return (
       <div className="App">
         <h1>{this.state.message}</h1>
-        //{<KanbanForm></KanbanForm>}
+        {<KanbanForm></KanbanForm>}
         <KanbanBoard />
       </div>
     );

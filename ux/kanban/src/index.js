@@ -6,12 +6,15 @@ import * as serviceWorker from './serviceWorker';
 
 import { ApolloProvider } from 'react-apollo';
 import { ApolloClient } from 'apollo-boost';
-import { HttpLink } from 'apollo-http-link';
+import { createHttpLink } from 'apollo-link-http';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 
+const httpLink = createHttpLink({
+  uri: 'http://localhost:3001'
+})
+
 const client = new ApolloClient({
-  uri: "http://localhost:3001/",
-  link: new HttpLink(),
+  link: httpLink,
   cache: new InMemoryCache()
 });
 
