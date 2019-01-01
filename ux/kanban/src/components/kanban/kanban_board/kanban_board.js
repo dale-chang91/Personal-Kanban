@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import KanbanColumn from '../kanban_column/kanban_column';
-import './kanban_board.css';
 
 import { Query } from 'react-apollo';
 import gql from 'graphql-tag';
@@ -12,6 +11,11 @@ const COLUMN_QUERY = gql`
   }
 }
 `;
+
+const boardStyle = {
+  display: 'flex',
+  flexDirection: 'row',
+};
 
 class KanbanBoard extends Component {
   render() {
@@ -31,7 +35,7 @@ class KanbanBoard extends Component {
             const columnsToRender = data.allColumns;
 
             return (
-              <div>
+              <div style={boardStyle}>
                 {
                   columnsToRender.map(column =>
                     <KanbanColumn

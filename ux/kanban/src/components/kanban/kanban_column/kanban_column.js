@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import KanbanCard from '../kanban_card/kanban_card';
 
-import './kanban_column.css';
-
 import { Query } from 'react-apollo';
 import gql from 'graphql-tag';
 
@@ -16,6 +14,11 @@ query columnTasks($columnName: String!)
     }
   }
 `;
+
+const columnStyle = {
+  display: 'flex',
+  flexDirection: 'column',
+};
 
 class KanbanColumn extends Component {
   render() {
